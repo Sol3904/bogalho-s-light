@@ -6,6 +6,7 @@ event_inherited();
 
 max_velh = 4;
 max_velv = 10;
+dash_vel = 7;
 
 xscale = 1;
 

@@ -5,13 +5,14 @@
 //movement
 
 //variaveis iniciais
-var right, left, jump, atk;
+var right, left, jump, attack, dash;
 var chao = place_meeting(x, y + 1, obj_block);
 
 right = keyboard_check(ord("D"));
 left = keyboard_check(ord("A"));
 jump = keyboard_check(vk_space);
 attack = keyboard_check_pressed(ord("J"));
+dash = keyboard_check_pressed(ord("K"));
 
 if(atk_buff > 0)
 {
@@ -47,6 +48,7 @@ else //salto no chao
 //state machine
 switch(state)
 {
+	#region idle
 	case "idle":
 	{
 		//comportamento do estado
@@ -68,12 +70,19 @@ switch(state)
 			state = "attacking";
 			velh = 0;
 		}
+		else if (dash)
+		{
+			state = "dash";
+			image_index = 0;
+		}
 		
 		dmg = noone;
 		break;
 		
 	}
+	#endregion
 	
+	#region moving
 	case "moving":
 	{
 		//comportamento do estado
@@ -95,13 +104,17 @@ switch(state)
 		{
 			state = "attacking"
 		}
+		else if (dash)
+		{
+			state = "dash";
+			image_index = 0;
+		}
 		
 		break;
 	}
+	#endregion
 	
-	
-	
-	
+	#region jumping
 	case "jumping":
 	{
 		if(velv > 0)
@@ -121,10 +134,17 @@ switch(state)
 		if(chao)
 		{
 			state = "idle";
-		}		
+		}
+		else if (dash)
+		{
+			state = "dash";
+			image_index = 0;
+		}
 		break;
 	}
+	#endregion
 	
+	#region attacking
 	case "attacking":
 	{
 		
@@ -190,11 +210,40 @@ switch(state)
 			{
 				instance_destroy(dmg);
 			}
-		
 		}
+		if (dash)
+		{
+			state = "dash";
+			image_index = 0;
+			combo = 0;
+			if(dmg)
+			{
+				instance_destroy(dmg, false);
+				dmg = noone;
+			}
+		}
+		
 		break;
 	}
+	#endregion
 	
+	#region dash
+	case "dash":
+	{
+		sprite_index = spr_bogalhodash;
+		
+		//aumento de velocidade
+		velh = image_xscale * dash_vel;
+		
+		//sair do dash
+		if(image_index >= image_number - 1)
+		{
+			state = "idle";		
+		}
+	
+		break;
+	}
+	#endregion
 }
 
 if(keyboard_check_pressed(ord("R")))room_restart();

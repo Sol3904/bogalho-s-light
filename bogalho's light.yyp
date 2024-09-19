@@ -32,6 +32,7 @@
     {"$GMFolder":"","%Name":"Player","folderPath":"folders/Sprites/Player.yy","name":"Player","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"air","folderPath":"folders/Sprites/Player/air.yy","name":"air","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"attack","folderPath":"folders/Sprites/Player/attack.yy","name":"attack","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"dash","folderPath":"folders/Sprites/Player/dash.yy","name":"dash","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"idle","folderPath":"folders/Sprites/Player/idle.yy","name":"idle","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"moving","folderPath":"folders/Sprites/Player/moving.yy","name":"moving","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
@@ -39,7 +40,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.6.2.162",
+    "IDEVersion":"2024.8.1.171",
   },
   "name":"bogalho's light",
   "resources":[
@@ -55,6 +56,7 @@
     {"id":{"name":"spr_bogalhoatk","path":"sprites/spr_bogalhoatk/spr_bogalhoatk.yy",},},
     {"id":{"name":"spr_bogalhoatk2","path":"sprites/spr_bogalhoatk2/spr_bogalhoatk2.yy",},},
     {"id":{"name":"spr_bogalhoatk3","path":"sprites/spr_bogalhoatk3/spr_bogalhoatk3.yy",},},
+    {"id":{"name":"spr_bogalhodash","path":"sprites/spr_bogalhodash/spr_bogalhodash.yy",},},
     {"id":{"name":"spr_bogalhofalling","path":"sprites/spr_bogalhofalling/spr_bogalhofalling.yy",},},
     {"id":{"name":"spr_bogalhoidle","path":"sprites/spr_bogalhoidle/spr_bogalhoidle.yy",},},
     {"id":{"name":"spr_bogalhojump","path":"sprites/spr_bogalhojump/spr_bogalhojump.yy",},},
