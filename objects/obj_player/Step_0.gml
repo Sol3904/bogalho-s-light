@@ -64,6 +64,7 @@ switch(state)
 		{
 			state = "jumping";
 			velv = (-max_velv * jump)
+			image_index = 0;
 		}
 		else if (attack)
 		{
@@ -95,10 +96,11 @@ switch(state)
 			state = "idle";
 			velh = 0;
 		}
-		else if (jump)
+			else if (jump || velv != 0)
 		{
 			state = "jumping";
-			velv = -max_velv
+			velv = (-max_velv * jump)
+			image_index = 0;
 		}
 		else if(attack)
 		{
@@ -221,6 +223,11 @@ switch(state)
 				instance_destroy(dmg, false);
 				dmg = noone;
 			}
+		}
+		if (velv != 0)
+		{
+			state = "jumping";
+			image_index = 0;
 		}
 		
 		break;

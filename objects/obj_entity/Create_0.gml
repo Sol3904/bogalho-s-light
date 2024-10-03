@@ -12,6 +12,7 @@ max_velv = 1;
 
 massa = 1;
 ataque =  1;
+
  
 show_state = false;
  

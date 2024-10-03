@@ -3,6 +3,7 @@
 
 //olhar pro lado certo
 
+
 //exibir estado quando pedido
 if(position_meeting(mouse_x, mouse_y, id)) 
 {

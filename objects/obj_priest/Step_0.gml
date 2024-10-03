@@ -3,6 +3,10 @@
 
 var chao = place_meeting(x, y + 1, obj_block)
 
+//olhar pro lado certo
+if(velh != 0) xscale = sign(velh);
+image_xscale = xscale;
+
 
 if(!chao)
 {
@@ -10,11 +14,17 @@ if(!chao)
 	
 }
 
+if(mouse_check_button_pressed(mb_right))
+{
+	state = "attack";
+}
 
 switch(state)
 {
 	case "idle":
 	{
+		velh = 0;
+		timer_state++;
 		if(sprite_index != spr_priestidle)
 		{
 			//reiniciar a animacao de hit
@@ -31,6 +41,53 @@ switch(state)
 				state = "hit";
 			}
 		}
+		//entrar no estado walk
+		if(irandom(timer_state) > 300)
+		{
+			state = choose("walk", "idle", "walk");		
+			timer_state = 0;
+		}
+		
+		break;
+	}
+	
+	case "walk":
+	{
+		timer_state++;
+		if(sprite_index != spr_priestwalk)
+		{
+			image_index = 0;
+			velh = choose(1, -1);
+		}
+		
+		sprite_index = spr_priestwalk;
+		
+		//condicao de saida do estado
+		if (irandom(timer_state) > 300)
+		{
+			state = choose("idle", "walk", "idle");
+			timer_state = 0;
+		}
+		
+		
+		break;
+	}
+	
+	case "attack":
+	{
+		velh = 0;
+		if(sprite_index != spr_priestatk)
+		{
+			image_index = 0;
+		}
+		sprite_index = spr_priestatk;
+		
+		if(image_index > image_number-1)
+		{
+			state = "idle";
+		}
+		//sair do estado
+		
 		
 		break;
 	}

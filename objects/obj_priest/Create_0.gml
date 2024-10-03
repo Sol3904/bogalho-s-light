@@ -9,3 +9,7 @@ vida_atual = max_vida;
 
 max_velh = 1;
 max_velv = 1;
+
+xscale = 1;
+
+timer_state = 0;
