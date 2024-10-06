@@ -19,3 +19,5 @@ show_state = false;
 img_spd = 50 / room_speed;
  
 state = "idle";
+
+

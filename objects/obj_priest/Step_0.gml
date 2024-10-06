@@ -14,10 +14,15 @@ if(!chao)
 	
 }
 
-if(mouse_check_button_pressed(mb_right))
-{
-	state = "attack";
-}
+//if(mouse_check_button_pressed(mb_right))
+//{
+//	state = "attack";
+//}
+
+
+
+
+
 
 switch(state)
 {
@@ -48,6 +53,8 @@ switch(state)
 			timer_state = 0;
 		}
 		
+		scr_atk_player_melee(obj_player, dist, xscale)
+		
 		break;
 	}
 	
@@ -69,6 +76,7 @@ switch(state)
 			timer_state = 0;
 		}
 		
+		scr_atk_player_melee(obj_player, dist, xscale)
 		
 		break;
 	}
@@ -86,9 +94,16 @@ switch(state)
 		{
 			state = "idle";
 		}
+		
+		//create dmg
+		if(image_index >= 2 && dmg == noone)
+		{
+			dmg = instance_create_layer(x, y, layer, obj_dmg);
+			dmg.dmg = atk;
+			dmg.pai = id;
+		}
+		
 		//sair do estado
-		
-		
 		break;
 	}
 	

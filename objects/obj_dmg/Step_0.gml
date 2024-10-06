@@ -2,6 +2,7 @@
 // Você pode escrever seu código neste editor
 
 var outro = instance_place(x,y,obj_entity);
+timer += 1;
 
 //se eu estou a tocar em alguem
 if (outro)
@@ -11,6 +12,7 @@ if (outro)
 	if(outro.id != pai)
 	{
 		show_debug_message("Dano aplicado ao inimigo ID: " + string(outro.id));
+		
 		if(outro.vida_atual > 0)
 		{
 			outro.state = "hit";
@@ -18,7 +20,13 @@ if (outro)
 			outro.vida_atual -= dmg;
 			show_debug_message("Dano aplicado! Vida restante: " + string(outro.vida_atual));
 			instance_destroy();
+			
 		}
 		
 	}
+	
+}
+
+if (timer >= lifetime) {
+    instance_destroy();
 }

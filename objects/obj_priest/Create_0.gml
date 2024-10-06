@@ -13,3 +13,7 @@ max_velv = 1;
 xscale = 1;
 
 timer_state = 0;
+
+dist = 100;
+dmg = noone;
+atk = 1;
