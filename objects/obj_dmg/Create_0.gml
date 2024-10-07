@@ -4,5 +4,5 @@
 dmg = 0;
 pai = noone;
 
-timer = 0;
-lifetime = 30;
+//timer = 0;
+//lifetime = 100;

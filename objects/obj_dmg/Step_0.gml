@@ -2,7 +2,7 @@
 // Você pode escrever seu código neste editor
 
 var outro = instance_place(x,y,obj_entity);
-timer += 1;
+//timer += 1;
 
 //se eu estou a tocar em alguem
 if (outro)
@@ -20,13 +20,14 @@ if (outro)
 			outro.vida_atual -= dmg;
 			show_debug_message("Dano aplicado! Vida restante: " + string(outro.vida_atual));
 			instance_destroy();
-			
 		}
-		
-	}
-	
+	}	
+}
+else
+{
+	instance_destroy();
 }
 
-if (timer >= lifetime) {
-    instance_destroy();
-}
+//if (timer >= lifetime) {
+  //  instance_destroy();
+//}

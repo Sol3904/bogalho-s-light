@@ -98,9 +98,16 @@ switch(state)
 		//create dmg
 		if(image_index >= 2 && dmg == noone)
 		{
-			dmg = instance_create_layer(x, y, layer, obj_dmg);
+			dmg = instance_create_layer(x + (sprite_width - 180), y - (sprite_height - 150), layer, obj_dmg);
 			dmg.dmg = atk;
 			dmg.pai = id;
+		}
+		
+		//destruir obj_dmg
+		if(dmg != noone && image_index >= 4)
+		{
+			instance_destroy(dmg);
+			dmg = noone;
 		}
 		
 		//sair do estado
