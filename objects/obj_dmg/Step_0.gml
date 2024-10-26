@@ -11,15 +11,18 @@ if (outro)
 	//se eu nao estou a tocar no meu pai
 	if(outro.id != pai)
 	{
-		show_debug_message("Dano aplicado ao inimigo ID: " + string(outro.id));
 		
-		if(outro.vida_atual > 0)
+		var parent = object_get_parent(outro.object_index);
+		if(parent != object_get_parent(pai.object_index))
 		{
+			if(outro.vida_atual > 0)
+			{
 			outro.state = "hit";
 			outro.image_index = 0;
 			outro.vida_atual -= dmg;
 			show_debug_message("Dano aplicado! Vida restante: " + string(outro.vida_atual));
 			instance_destroy();
+			}
 		}
 	}	
 }

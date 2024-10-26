@@ -251,6 +251,63 @@ switch(state)
 		break;
 	}
 	#endregion
+	
+	case "hit":
+	{
+		if (sprite_index != spr_bogalhohit)
+		{
+			sprite_index = spr_bogalhohit;
+			image_index = 0;
+		}
+		
+			
+		velh = 0;
+		
+		//devo morrer? (pfv, tenho sono)
+		if(vida_atual > 0)
+		{
+			if (image_index >= image_number -1)
+			{
+				state = "idle";
+			}
+			
+		}
+		else
+		{
+			if (image_index >= image_number -1)
+			{
+				state = "dead";
+			}
+		}
+
+
+		break;
+	}
+	
+	case "dead":
+	{
+		if(sprite_index != spr_bogalhodead)
+		{
+			image_index = 0;
+			sprite_index = spr_bogalhodead;
+		}
+		
+		//morte real
+		if(image_index >= image_number-1)
+		{
+			velv = 0;
+			velh = 0;
+			image_index = image_number -1;
+		}
+		room_goto(Revive);
+		break;
+	}
+	
+	//state padrao
+	default:
+	{
+		state = "idle";
+	}
 }
 
 if(keyboard_check_pressed(ord("R")))room_restart();

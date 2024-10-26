@@ -17,3 +17,6 @@ timer_state = 0;
 dist = 100;
 dmg = noone;
 atk = 1;
+
+//variavel de controlo do ataque
+posso = true;

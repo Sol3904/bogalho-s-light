@@ -87,6 +87,7 @@ switch(state)
 		if(sprite_index != spr_priestatk)
 		{
 			image_index = 0;
+			posso = true;
 		}
 		sprite_index = spr_priestatk;
 		
@@ -96,11 +97,12 @@ switch(state)
 		}
 		
 		//create dmg
-		if(image_index >= 2 && dmg == noone)
+		if(image_index >= 2 && dmg == noone && posso)
 		{
 			dmg = instance_create_layer(x + (sprite_width - 180), y - (sprite_height - 150), layer, obj_dmg);
 			dmg.dmg = atk;
 			dmg.pai = id;
+			posso = false;
 		}
 		
 		//destruir obj_dmg
