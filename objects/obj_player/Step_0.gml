@@ -56,7 +56,7 @@ switch(state)
 		
 		//condições de troca de estado
 		//moving
-		if(right || left)
+		if(velh != 0)
 		{
 			state = "moving";
 		}
@@ -252,6 +252,7 @@ switch(state)
 	}
 	#endregion
 	
+	#region hit
 	case "hit":
 	{
 		if (sprite_index != spr_bogalhohit)
@@ -283,7 +284,9 @@ switch(state)
 
 		break;
 	}
+	#endregion
 	
+	#region dead
 	case "dead":
 	{
 		if(sprite_index != spr_bogalhodead)
@@ -299,9 +302,15 @@ switch(state)
 			velh = 0;
 			image_index = image_number -1;
 		}
-		room_goto(Revive);
+		
+		if(image_index = image_number - 1)
+		{
+			room_goto(Revive);
+		}
+		
 		break;
 	}
+	#endregion
 	
 	//state padrao
 	default:

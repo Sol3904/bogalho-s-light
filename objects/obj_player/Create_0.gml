@@ -10,6 +10,16 @@ event_inherited();
 max_vida = 5;
 vida_atual = max_vida;
 
+healthbar_width = 100;
+healthbar_height = 10;
+healthbar_x = (320/2) - (healthbar_width/2);
+
+if (!variable_global_exists("initial_y")) {
+    initial_y = y;
+}
+healthbar_y = initial_y - 100;
+
+
 max_velh = 4;
 max_velv = 10;
 dash_vel = 7;
