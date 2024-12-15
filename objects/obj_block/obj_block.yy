@@ -6,8 +6,8 @@
   "name":"obj_block",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objetos",
-    "path":"folders/Objetos.yy",
+    "name":"campaign",
+    "path":"folders/Objetos/campaign.yy",
   },
   "parentObjectId":{
     "name":"obj_entity",

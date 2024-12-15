@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"inimigos",
-    "path":"folders/Objetos/inimigos.yy",
+    "path":"folders/Objetos/campaign/inimigos.yy",
   },
   "parentObjectId":{
     "name":"obj_inimigo_parent",

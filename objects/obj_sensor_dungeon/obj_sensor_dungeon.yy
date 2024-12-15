@@ -8,8 +8,8 @@
   "name":"obj_sensor_dungeon",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objetos",
-    "path":"folders/Objetos.yy",
+    "name":"campaign",
+    "path":"folders/Objetos/campaign.yy",
   },
   "parentObjectId":null,
   "persistent":false,

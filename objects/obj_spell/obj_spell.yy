@@ -1,18 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_inimigo_parent",
+  "%Name":"obj_spell",
   "eventList":[],
   "managed":true,
-  "name":"obj_inimigo_parent",
+  "name":"obj_spell",
   "overriddenProperties":[],
   "parent":{
-    "name":"inimigos",
-    "path":"folders/Objetos/campaign/inimigos.yy",
+    "name":"multiplayer",
+    "path":"folders/Objetos/multiplayer.yy",
   },
-  "parentObjectId":{
-    "name":"obj_entity",
-    "path":"objects/obj_entity/obj_entity.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -30,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_spell",
+    "path":"sprites/spr_spell/spr_spell.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

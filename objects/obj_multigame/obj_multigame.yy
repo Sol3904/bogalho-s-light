@@ -1,18 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_inimigo_parent",
-  "eventList":[],
+  "%Name":"obj_multigame",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_inimigo_parent",
+  "name":"obj_multigame",
   "overriddenProperties":[],
   "parent":{
-    "name":"inimigos",
-    "path":"folders/Objetos/campaign/inimigos.yy",
+    "name":"multiplayer",
+    "path":"folders/Objetos/multiplayer.yy",
   },
-  "parentObjectId":{
-    "name":"obj_entity",
-    "path":"objects/obj_entity/obj_entity.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

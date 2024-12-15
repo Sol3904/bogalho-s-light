@@ -10,8 +10,8 @@
   "name":"obj_dmg",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objetos",
-    "path":"folders/Objetos.yy",
+    "name":"campaign",
+    "path":"folders/Objetos/campaign.yy",
   },
   "parentObjectId":null,
   "persistent":false,
